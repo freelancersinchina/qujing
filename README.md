@@ -3,6 +3,9 @@
 
 ## 技术
 ### 区块链原理
+
+- [ ] [《WTF is The Blockchain?》](./posts/principle/wtf_is_the_blockchain.md)
+
 ### 项目相关
 ## 应用场景
 ## 其他材料
