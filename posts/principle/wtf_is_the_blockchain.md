@@ -4,62 +4,123 @@ Source: [《WTF is The Blockchain?》](https://hackernoon.com/wtf-is-the-blockch
 
 Unless you’re hiding under the rock, I am sure you’d have heard of Bitcoins and Blockchain. After all, they are the trending and media’s favorite topics these days — the buzzwords of the year. Even the people who’ve never mined a cryptocurrency or understand how it works, are talking about it. I have more non-technical friends than technical ones. They have been bugging me for weeks to explain this new buzzword to them. I guess there are thousands out there who feel the same. And when that happens, there comes a time to write something to which everyone can point the other lost souls to — that’s the purpose of this post — written in plain english that any regular internet user understands.
 
+除非你待在与世隔绝的地方，不然你不可能没听说过比特币和区块链这两个东西。毕竟最近这两个词已经是媒体的热门主题，是今年的时髦词。即使那些不关心或者一点也不了解这些东西怎么运行的人也在不停的讨论比特币和区块链。我的朋友大多数是非技术人员，但是他们已经好几周都要求我向他们解释一下这些新东西到底是怎么样的。我想应该还有很多像我朋友那样还不了解的人，所以是时候我出来写一篇文章，用通俗的语言解释一下比特币和区块链了。
+
 > By the way, I am curator of a weekly newsletter, Unmade, which delivers one idea from the future to your inboxes.
 
+> 顺便说一下，我是一份周报的管理者。Unmade，每周都会给你传递一个来自未来的想法。
+
 ## Blockchain: why do we even need something this complex?
+
+
+
+## 区块链：为什么我们需要这么复杂的一个东西？
+
 > “For every complex problem there is an answer that is clear, simple, and wrong.” — H. L. Mencken
+
+> “对于每一个复杂问题，都有一个清楚、简单以及错误的答案。”——H.L.Mencken
 
 Unlike every other post on the internet, instead of first defining the Blockchain, we’ll understand the problem it solves.
 
+我们不会像网上其他文章一样，一上来就定义区块链是什么东西，相反，我们先来明白他到底解决了什么问题。
+
 Imagine, Joe is your best friend. He is traveling overseas, and on the fifth day of his vacation, he calls you and says, “Dude, I need some money. I have run out of it.”
 
+想象一下，Joe是你最好的朋友，他现在正在海外。在假期的第五天，他给你打电话，然后说：“Dude，我需要一点钱，我自己的钱已经用完了。”
+
 You reply, “Sending some right away,” and hung up.
+
+你于是回复。”马上给你汇款。”然后挂掉了电话。
 
 ![1](../../images/1/1.png)
 
 You then call your account manager at your bank and tell him, “Please transfer $1000 from my account to Joe’s account.”
 
+然后你给银行经理打电话告诉他：“帮我从我的账户里转1000美金到Joe的账户。”
+
 Your account manager replies, “Yes, sir.”
 
+你的银行经理回答。”好的，先生。“
+
 He opens up the register, checks your account balance to see if you have enough balance to transfer $1000 to Joe. Because you’re a rich man, you have plenty; thus, he makes an entry in the register like the following:
+
+他打开了登记薄，查看了你的账户，检查是否有足够的余额可以给Joe转账1000美金。因为你比较富有，账户余额充足，所以他在登记簿上登记了一下一条记录：
 
 ![2](../../images/1/2.png)
 
 > Note: We’re not talking about computers only to keep things simple.
 
+> 注意：我们没有讨论计算机，是因为我们想要把事情变得简单。
+
 You call Joe and tell him, “I’ve transferred the money. Next time, you’d go to your bank, you can withdraw the $1000 that I have just transferred.”
+
+你打电话给Joe，告诉他。“我已经转账了，接下来，你可以去银行，取回刚才我转的1000美金。“
 
 ![3](../../images/1/3.png)
 
 What just happened? You and Joe both trusted the bank to manage your money. There was no real movement of physical bills to transfer the money. All that was needed was an entry in the register. Or more precisely, an entry in the register that neither you nor Joe controls or owns.
 
+刚才发生了什么？你和Joe都相信银行，让银行来管理你的金钱。没有真实物理的金钱转移，所有的只是登记簿里面的一条记录，甚至这条记录也不是你和Joe可以控制或者拥有的。
+
 And that is the problem of the current systems.
+
+这就是现在系统的问题。
 
 > To establish trust between ourselves, we depend on individual third-parties.
 
+> 为了实现我们之间的信任，我们必须要依靠一个独立的第三方。
+
 For years, we’ve depended on these middlemen to trust each other. You might ask, “what is the problem depending on them?”
 
+这么多年，我们和其他人之间的信任都是通过第三方来完成的。你可能会问,“那这有什么问题吗？我的生活好像没有出现过问题。”
+
 The problem is that they are singular in number. If a chaos has to be injected in the society, all it requires is one person/organization to go corrupt, intentionally or unintentionally.
+
+这个问题在于，这些第三方是单一的。如果想要让这个过程变得混乱，只要一个个人或者一个组织故意或无意地做错事情。
 
 - What if that register in which the transaction was logged gets burnt in a fire?
 - What if, by mistake, your account manager had written $1500 instead of $1000?
 - What if he did that on purpose?
 
+
+
+- 如果交易记录的登记簿被火烧了怎么办？
+- 如果你的银行经理把1000美金错误地写成了1500美金怎么办？
+- 如果他是故意这么做的怎么办？
+
+
+
 > For years, we have been putting all our eggs in one basket and that too in someone else’s.
+
+> 这些年我们把所有的蛋都放在一个菜篮子里，其他人
 
 Could there be a system where we can still transfer money without needing the bank?
 
+那么有没有一种系统，让我们可以直接给其他人转账，但是不通过银行？
+
 To answer this question, we’ll need to drill down further and ask ourselves a better question (after all, only better questions lead to better answers).
+
+要回答这个问题，我们需要更加深入一点，问我们自己一个更加好的问题（毕竟一个更加好的问题才会引出一个更加好的答案）。
 
 Think about it for a second, what does transferring money means? Just an entry in the register. The better question would then be —
 
+思考一下，转账到底意味着什么？只是登记簿里面的一条记录。那么一个更好的问题就是——
+
 > Is there a way to maintain the register among ourselves instead of someone else doing it for us?
+
+> 那么是否可以我们这些人之间自己拥有一个登记簿，而不是第三方来帮组我们做这件事？
 
 Now, that is a question worth exploring. And the answer is what you might have already guessed. The blockchain is the answer to the profound question.
 
+现在，这是一个值得探讨的问题。这个问题的答案你可能已经猜到了。区块链就是这个答案。
+
 It is a method to maintain that register among ourselves instead of depending on someone else to do it for us.
 
+区块链就是一种方式，让我们能够自己管理这个登记簿，而不需要依赖第三方。
+
 Are you still with me? Good. Because now, when several questions have started popping in your mind, we will learn how this distributed register works.
+
+你还在看吗？很好，因为现在可能有几个问题在你的脑海里了，我们将通过这几个问题来了解这个分布式账本是如何工作的。
 
 ## Yes, but tell me, how does it work?
 
