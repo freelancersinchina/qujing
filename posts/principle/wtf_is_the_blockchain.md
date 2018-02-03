@@ -124,50 +124,96 @@ Are you still with me? Good. Because now, when several questions have started po
 
 ## Yes, but tell me, how does it work?
 
+## 好的，那么请告诉我运行原理？
+
 The requirement of this method is that there must be enough people who would like not to depend on a third-party. Only then this group can maintain the register on their own.
+
+这种方式实现的必要条件是，有足够的不依赖与第三方，只有这样子这个群体才能够拥有一个属于自己的登记簿。
 
 > “It might make sense just to get some Bitcoin in case it catches on. If enough people think the same way, that becomes a self-fulfilling prophecy.” — Satoshi Nakamoto in 2009
 >
 
+> “如果有足够多的人认为有必要持有一些比特币，以防未来比特币开始流行，那么这个系统就是可以实现的。”——中本聪，2009年
+
 How many are enough? At least three. For our example, we will assume ten individuals want to give up on banks or any third-party. Upon mutual agreement, they have details of each other’s accounts all the time — without knowing the other’s identity.
+
+多少人才是足够的？至少是三个人。在我们的例子中，我们将假设十个不同的人，他们都想要放弃银行或者第三方。在这个共识之上，他们能够随时可以在不知道其他人身份的情况下知道对方的账户信息，
 
 ![4](../../images/1/4.png)
 
 ### 1. An Empty Folder
+
+### 1. 一个空的文件夹
 Everyone contains an empty folder with themselves to start with. As we’ll progress, all these ten individuals will keep adding pages to their currently empty folders. And this collection of pages will form the register that tracks the transactions.
 
+在一开始，参与者每个人都有一个属于他们的空的文件夹。随着整个过程的继续，十个参与者会持续地在他们的文件夹里增加页面。这些页面就像是登记簿，可以追踪所有的交易信息。
+
+
+
 ### 2. When A Transaction Happens
+
+### 2. 当一条交易发生的时候
+
+
 Next, everyone in the network sits with a blank page and a pen in their hands. Everyone is ready to write any transaction that occurs within the system.
+
+每一个参与者都有一张空白的纸和一支笔，随时都准备着记录发生在这个系统中的任何交易信息。
 
 Now, if #2 wants to send $10 to #9.
 
+现在，如果#2 想要给#9号发送10美金。
+
 To make the transaction, #2 shouts and tells everyone, “I want to transfer $10 to #9. So, everyone, please make a note of it on your pages.”
+
+为了完成这个交易，#2呼叫并且告诉其他人，“我想要给#9发送10美金。所以每个人请在至少记录这条交易。”
 
 ![5](../../images/1/5.png)
 
 Everyone checks whether #2 has enough balance to transfer $10 to #9. If she has enough balance, everyone then makes a note of the transaction on their blank pages.
 
+于是每个人都都喀什检查#2的账户里面是否与足够的余额来完成发给#9 10美金这笔交易。如果她有足够的余额，那么每个人都在他们纸上记录这笔交易。
+
 ![First transaction on the page](../../images/1/6.png)
 
 The transaction is then considered to be complete.
 
+这样，这笔交易就算是完成了。
+
 ### 3. Transactions Continue Happening
+
+### 3. 更多的交易持续在发生
+
 As the time passes, more people in the network feel the need to transfer money to others. Whenever they want to make a transaction, they announce it to everyone else. As soon as a person listens to the announcement, (s)he writes it on his/her page.
 
+随着项目进行下去，网络中更多的人需要给其他人转送资金。任何时候当有一个人想要做一笔交易，都需要通过以上的方式告诉这个网络里面的其他人。其他人听到消息后，尽可能快的把交易信息记录到纸上。
+
 This exercise continues until everyone runs out of space on the current page. Assuming a page has space to record ten transactions, as soon as the tenth transaction is made, everybody runs out of the space.
+
+这个过程将会一直持续，直到每一个人都用光了当前纸张的页面。假设每一张纸都能够记录10条交易，当第十条交易记录下来，每个人都用好了这张纸的页面。
 
 !![When page gets filled](../../images/1/7.png)
 
 It’s time to put the page away in the folder and bring out a new page and repeat the process from the step 2 above.
 
+这时候就把这张纸放到文件夹中，然后拿出一张新的纸，开始重复从第二步开始的操作过程。
+
 ### 4. Putting Away The Page
+
+### 4. 放置纸张
+
 Before we put away the page in our folders, we need to seal it with a unique key that everyone in the network agrees upon. By sealing it, we will make sure that no one can make any changes to it once its copies have been put away in everyone’s folder — not today, not tomorrow and not even after a year. Once in the folder, it will always stay in the folder — sealed. Moreover, if everyone trusts the seal, everyone trusts the contents of the page. And this sealing of the page is the crux of this method.
+
+在把纸张放到文件夹的过程中，我们需要用一个其他人认同的、独一无二的密钥密封这张纸。通过这个过程，我们就能够确保在每个人的文件夹中的备份都是没有被修改过的，今天，明天，甚至一年之后都不能修改。进一步，如果每个人都信任密封结果，那么就相信这张纸上面记录的内容。所以如何密封就成为了整个系统的关键之处。
 
 > [Jargon Box] It is called ‘mining’ on the page to secure it, but for the simplicity of it, we’ll keep calling it ‘sealing.’
 >
 
+> [Jargon Box]保护安全的方法叫做挖矿，但是为了简单起见，我们就把它叫做密封。
+
 > Earlier the third-party/middleman gave us the trust that whatever they have written in the register will never be altered. In a distributed and decentralized system like ours, this seal will provide the trust instead.
 >
+
+> 之前的第三方或者中间人让我们相信，任何记录在登记簿里面的内容都是不能被修改的。在分布式、去中心化的系统，就像我们现在的这个，密封代替第三方，给我们提供了一种信任。
 
 ## Interesting! How do we seal the page then?
 
