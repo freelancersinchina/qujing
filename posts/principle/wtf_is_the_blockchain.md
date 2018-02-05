@@ -171,7 +171,7 @@ To make the transaction, #2 shouts and tells everyone, “I want to transfer $10
 
 Everyone checks whether #2 has enough balance to transfer $10 to #9. If she has enough balance, everyone then makes a note of the transaction on their blank pages.
 
-于是每个人都都喀什检查#2的账户里面是否与足够的余额来完成发给#9 10美金这笔交易。如果她有足够的余额，那么每个人都在他们纸上记录这笔交易。
+于是每个人都都检查#2的账户里面是否与足够的余额来完成发给#9 10美金这笔交易。如果她有足够的余额，那么每个人都在他们纸上记录这笔交易。
 
 ![First transaction on the page](../../images/1/6.png)
 
@@ -217,74 +217,126 @@ Before we put away the page in our folders, we need to seal it with a unique key
 
 ## Interesting! How do we seal the page then?
 
+## 有趣！那么我们如何密封这页面呢？
+
 Before we learn how we can seal the page, we’ll know how the seal works, in general. And as a pre-requisite to it is learning about something that I like to call…
+
+在学习如何密封这纸张之前，我们先要知道密封一般是如何运行的？
 
 ### The Magic Machine
 
+### 神奇的机器
+
 Imagine a machine surrounded by thick walls. If you send a box with something inside it from the left, it will spit out a box containing something else.
+
+想象一个被厚墙包围的机器，如果你从左边往机器内部放入一个装有某种物品的盒子，然后机器机会吐出一个装有另外东西的盒子。
 
 > [Jargon Box] This machine is called ‘Hash Function,’ but we aren’t in a mood to be too technical. So, for today, these are ‘The Magic Machines.’
 >
 
-![The Magic Machine (aka Hashing Function)](../../images/1/8.png)
+> [Jargon Box]这种机器叫做哈希函数，但是我们并不想提到太多技术，所以我们就把这机器叫做神奇的机器吧。
+
+![The Magic Machine aka Hashing Function](../../images/1/8.png)
 
 Suppose, you send the number 4 inside it from the left, we’d find that it spat out the following word on its right: ‘dcbea.’
 
+假设，你从左边送入数字4，那么我们就能发现神奇机器从右边输出了'dcbea'。
+
 How did it convert the number 4 to this word? No one knows. Moreover, it is an irreversible process. Given the word, ‘dcbea,’ it is impossible to tell what the machine was fed on the left. But every time you’d feed the number 4 to the machine, it will always spit out the same word, ‘dcbea.’
+
+那么他是怎么把数字4转变成以上的字符串的？没有人知道。进一步，这是一个不可逆的过程。如果给定一个词，“dcbea"，几乎不可能猜出送入机器左边的那个字符串是什么。但是如果每一次你从左边给机器输入数字4，那么总会得到一样的字符串,"dcbea"。
 
 ![hash(4) == dcbea](../../images/1/9.png)
 
 Given the word, ‘dcbea,’ it is impossible to tell what the machine was fed on the left. But every time you’d feed the number 4 to the machine, it will always spit out the same word, ‘dcbea.’
 
+给定字符串，“dcbea"，是不可能知道传给机器左边的内容是什么。但是如果以每次从左边给机器传递数字四，那么总会从右边得到相同的字符串”dcbea"。
+
 Let’s try sending in a different number. How about 26?
+
+让我们传递一个不一样的数字，比如26试试？
 
 ![hash(26) == 94c8e](../../images/1/10.png)
 
 We got ‘94c8e’ this time. Interesting! So, the words can contain the numbers too.
 
+这一次我们就会得到“94c8e"，非常有意思！所以输出来的字符串中也包含了数字。
+
 What if I ask you the following question now:
 
+那么如果我问你以下的问题，结果是怎么样的？
+
 > “Can you tell me what should I send from the left side of the machine such that I get a word that starts with three leading zeroes from the right side of it? For example, 000ab or 00098 or 000fa or anything among the others.”
->
+
+> ”你能否告诉我给机器左边传递什么样的数字，机器才能够输出一个开头有三个0的字符串？比如000ab 或者00098，亦或者其他这样的字符串。
 
 ![Predicting the input](../../images/1/11.png)
 
 Think about the question for a moment.
 
+可以思考一下这个问题。
+
 I’ve told you the machine has a property that we cannot calculate what we must send from the left after we’re given the expected output on the right. With such a machine given to us, how can we answer the question I asked?
 
+我已经告诉你，这台机器有一个属性，就是不能从右边的输出来推测出左边的输入的内容。既然这样，那么我们应该怎么做呢？
+
 I can think of one method. Why not try every number in the universe one by one until we get a word that starts with three leading zeroes?
+
+我想到一个方法。为什么我们不一个数字一个数字试过去，直到我们得到以三个0开头的字符串？
 
 ![Try everything to calculate the input](../../images/1/12.png)
 
 Being optimistic, after several thousand attempts, we’ll end up with a number that will yield the required output on the right.
 
+乐观一点的情况是，通过几千次的尝试，我们得到了我们想要的结果。
+
 ![](../../images/1/13.png)
 
 It was extremely difficult to calculate the input given the output. But at the same time, it will always be incredibly easy to verify if the predicted input yields the required output. Remember that the machine spits out the same word for a number every time.
 
+给定输出结果，计算出对应的输入是一件非常困难的事情。但是同时，验证这个对应输入是否是正确却是难以置信地容易。记住，这台机器对于每一个输入都是有一个唯一的输出。
+
 How difficult do you think the answer is if I give you a number, say 72533, and ask you the question, “Does this number, when fed into the machine, yields a word that starts with three leading zeroes?”
+
+你认为给你一个数字，比如72533，然后问你问题，“这个数字作为输入，机器的右边能否产生一个以三个0作为开头的字符串结果？”
 
 All you need to do is, throw the number in the machine and see what did you get on the right side of it. That’s it.
 
+为了回答这个问题，只要把数字72533放到机器的左边，看机器右边产生的结果，然后比较一下就能够知道结果。
+
 The most important property of such machines is that — “Given an output, it is extremely difficult to calculate the input, but given the input and the output, it is pretty easy to verify if the input leads to the output.”
+
+这就是这台机器最重要的特性——“给定一个输出结果，找到这个结果的对应输入是非常困难的，但是相反，给定输入，那么非常容易判断这个输入是否是我们需要的结果。”
 
 We’ll remember this one property of the Magic Machines (or Hash Functions) through the rest of the post:
 
+我们将会通过下面的内容，具体了解这个神奇的机器（或者哈希函数）的这个特性。
+
 > Given an output, it is extremely difficult to calculate the input, but given an input and output, it is pretty easy to verify if the input leads to the output.
->
+
+> 给定一个输出结果，找到这个结果的对应输入是非常困难的，但是相反，给定输入，那么非常容易判断这个输入是否是我们需要的结果。
 
 ### How to use these machines to seal a page?
 
+### 那么怎么使用这台机器来封装纸张？
+
 We’ll use this magic machine to generate a seal for our page. Like always, we’ll start with an imaginary situation.
 
+我们将会使用这台机器来封装记录了交易信息的纸张。同样，一开始我们要想象一个使用场景。
+
 Imagine I give you two boxes. The first box contains the number 20893. I, then, ask you, “Can you figure out a number that when added to the number in the first box and fed to the machine will give us a word that starts with three leading zeroes?”
+
+如果我给你了两个盒子，第一个盒子里面的数字是20893，然后问你，“你能够知道一个数字，这个数字和20893相加之后，从递给机器的左边，从右边得到一个以三个0作为开头的字符串吗？“
 
 ![](../../images/1/14.png)
 
 This is a similar situation as we saw previously and we have learned that the only way to calculate such a number is by trying every number available in the entire universe.
 
+这和之前的情况类似，我们已经知道唯一的方法就是不断地尝试数字，直到得到想要的答案。
+
 After several thousand attempts, we’ll stumble upon a number, say 21191, which when added to 20893 (i.e. 21191 + 20893 = 42084) and fed to the machine, will yield a word that satisfies our requirements.
+
+经过几千次尝试，我们得到了一个数字，假设是21191，和20893想家之后，得到42084。结果放入机器之后，就会得到的字符串正好符合我们的要求。
 
 ![](../../images/1/15.png)
 
